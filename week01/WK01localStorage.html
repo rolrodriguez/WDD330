@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>WK01 Exercises</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+ </head>
+<body>
+  <h1>Local Storage</h1>
+  <div id="WK01Exercise">
+    <label for="title">Story entry title:</label>
+    <input id="title" type="text" placeholder="Insert the story title"><br /><br />
+    <label for="storyEntry">Story content:</label><br /><br />
+    <textarea id="storyEntry" placeholder="Insert your story entry"></textarea><br /><br />
+    <div id="controls">
+      <button onclick="saveStory()">Save</button>
+      <button onclick="readStory()">Load</button>
+      <button onclick="displayStory()">Display</button>
+    </div>
+    <div id="entries"></div>
+  </div>
+  <div id="footer">
+    <a href="./index.html">Return to WK01</a>
+  </div>
+  <script src="./js/WK01.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+body{
+  background: rgb(241,241,241);
+}
+
+body > h1{
+  background: #578c96;
+  padding: 1em;
+  font-size: 1.5em;
+  text-align: center;
+  color: white;
+  margin: 0;
+}
+
+body > h2{
+  color: #363636
+}
+
+#content{
+  padding: 1em 2em;
+  background: rgba(255, 255, 255, 0.75);
+  margin: 0;
+}
+
+#WK01Exercise{
+  text-align: center;
+  padding: 1em 2em;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+#storyEntry{
+  width: 80%;
+  height: 20%;
+}
+
+li, a, a:visited{
+  text-decoration: none;
+  color: rgba(70, 70, 70, 0.918);
+  font-size: 20px;
+}
+
+a:hover{
+  color: #578c96;;
+}
+
+#content a:hover::after{
+  content: "<"
+}
+
+a:active{
+  color: #578c96;;
+}
+
+#footer{
+  background: #578c96;
+  text-align: center;
+}
+
+#footer a{
+  font-size: 15px;
+  color: white;
+}
+
+button{
+  width: 60px;
+  height: 20px;
+}
+
+#entries{
+  margin: 20px;
+  text-align: left;
+}
