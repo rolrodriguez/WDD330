@@ -11,7 +11,8 @@
   
   // list of objects for the menu
   const links = [
-    { "label": "Week 01 notes", "url": "./week01/" }
+    {"label": "Week 01 notes", "url": "./week01/" },
+    {"label": "Week 02 notes", "url": "./week02/"}
   ];
 
   // Get content list

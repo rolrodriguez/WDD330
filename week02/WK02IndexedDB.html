@@ -1,0 +1,61 @@
+<html>
+<head>
+  <title>WK02 Exercises</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+ </head>
+ <style>
+
+   label, input[type="text"], input[type="number"]{
+     display: block;
+     text-align: center;
+     margin: 5px auto;
+   }
+   table{
+     border: 1px solid black;
+     border-collapse: collapse;
+     margin: auto;
+   }
+
+   th,td{
+    padding: 5px 10px;
+    border: 1px solid black;
+   }
+   th{
+    background-color:#578c96;
+    color: white;
+   }
+  
+   tr:nth-child(odd){
+     background-color: rgb(247, 247, 247);
+   }
+
+   tr:hover{
+     background-color: rgb(210, 210, 210);
+   }
+
+   .score{
+     text-align: right;
+   }
+ </style>
+<body>
+  <h1>indexedDB</h1>
+  <div id="WKExercise">
+    <label for="student">Student Name:</label>
+    <input id="student" type="text" placeholder="Student">
+    <label for="course">Course:</label>
+    <input id="course" type="text" placeholder="Course">
+    <label for="term">Term:</label>
+    <input id="term" type="text" placeholder="Term">
+    <label for="score">Score:</label>
+    <input id="score" type="number" step="5" placeholder="Score">
+    <div id="controls">
+      <button onclick="insertValues()">Save</button>
+    </div>
+    <div id="entries"></div>
+  </div>
+  <div id="footer">
+    <a href="./index.html">Return to WK02</a>
+  </div>
+  <script src="./js/WK02.js"></script>
+</body>
+</html>

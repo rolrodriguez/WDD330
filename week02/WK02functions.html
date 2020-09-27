@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>WK02 Exercises - Other functions</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+ </head>
+ <style>
+   label, input[type="text"], input[type="number"]{
+     text-align: center;
+     margin: 5px auto;
+   }
+   body > div{
+     border: 1px solid black;
+     padding: auto;
+     text-align: center;
+   }
+
+ </style>
+<body>
+  <h1>Other functions</h1>
+  <div id="RandomNum">
+    <h3>Random Number</h3>
+    <label for="min">Min:</label>
+    <input id="min" type="number" placeholder="Min">
+    <label for="max">Max:</label>
+    <input id="max" type="number" placeholder="Max">
+    <input type="button" onclick="calculateRandom()" value="Generate">
+    <div id="random"></div>
+  </div>
+  <div id="replace">
+    <h3>Replace in String</h3>
+    <label for="from">Character to change from</label>
+    <input id="from" type="text" placeholder="Change from">
+    <label for="to">Character to change to</label>
+    <input id="to" type="text" placeholder="Change to">
+    <label for="replacestring">String to be replaced</label>
+    <input id="replacestring" type="text" placeholder="Max">
+    <input type="button" onclick="replaceInString()" value="Replace">
+    <div id="result"></div>
+  </div>
+  <div id="footer">
+    <a href="./index.html">Return to WK02</a>
+  </div>
+  <script src="./js/WK02others.js"></script>
+</body>
+</html>
