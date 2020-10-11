@@ -1,0 +1,75 @@
+<html>
+<head>
+  <title>Week 04</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+ </head>
+<body>
+<h1>Week 04</h1>
+<div id="content">
+  <ul>
+    <h3>Exercises</h3>
+      <ul>
+        <li><a href="./WK04.html">Forms, OOP and Modern JS</a></li>
+        <li><a href="./TicTacToe.html">Tic, tac, toe game</a></li>
+      </ul>
+    <h3>Notes</h3>
+      <ul>
+        <li>
+          forms["form name"].elements returns a collection of the elements in the form
+        </li>
+        <li>
+          Use event.preventDefault() to stop a form from being submitted
+        </li>
+        <li>
+          In real-life we should use validation in both the front end and the back end.
+        </li>
+        <li>
+          If we want to add additional functionality to an existing class we have to options:
+        </li>
+        <ol>
+          <li>To add the additional property to the prototype</li>
+          <li>Create a new class inheriting from the class we want to use as a basis</li>
+        </ol>
+        <li>
+          We can create a new instance of an already created object by using: let myObject = Object.create(NameOfObject)
+        </li>
+        <li>
+          If a method returns this, its methods can be chained together to form a sequence of method calls that 
+          are called one after the other.
+        </li>
+        <li>
+          By using CDNs (Content Delivery Networks) for our libraries we save downloading them again for the user
+          if the same are used in other sites, like JQuery, Angular, and others.
+        </li>
+        <li>
+          A code transpiler allows us to write code in the latest version of ECMAScript, using all the latest features,
+          then convert it into an older variant of JavaScript that is compatible with most browsers. Babel is a famous 
+          code transpiler.
+        </li>
+      </ul>
+    <h3>Questions:</h3>
+      <ul>
+        <li>
+          How are input fields automatically updated with currency, phone number, or credit card number formats?
+          Is this by just listening to a change in the field and updating the value as that format, or does
+          that type of validation use something else behind the scenes?
+        </li>
+        <li>
+          I found it confusing that we can create objects in so many ways: object literals, new instances from a class,
+          instances from a prototype. Personally, I would only use the class based instantiation, are there any reasons
+          where this method could not be used?
+        </li>
+        <li>
+          I see there is a continuous argument about using vanillaJS, React, Vue or Angular. Based on market research
+          what is the safest bet for us to land a job at the time? Personally, I like to build things myself using
+          vanillaJS but I know that will not be the case will all projects, as some projects will require a faster
+          time to deliver. 
+        </li>
+      </ul>
+  </ul>
+</div>
+  <div id="footer">
+    <a href="../index.html">Return to Index</a>
+  </div>  
+</body>
+</html>

@@ -13,7 +13,8 @@
   const links = [
     {"label": "Week 01 notes", "url": "./week01/" },
     {"label": "Week 02 notes", "url": "./week02/" },
-    {"label": "Week 03 notes", "url": "./week03/"}
+    {"label": "Week 03 notes", "url": "./week03/" },
+    {"label": "Week 04 notes", "url": "./week04/" }
   ];
 
   // Get content list

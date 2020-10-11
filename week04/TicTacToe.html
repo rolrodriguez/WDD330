@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic tac toe</title>
+  <style>
+    body{
+      background-color: rgb(247,247,247);
+    }
+    td{
+      border: 1px solid black;
+      width: 5em;
+      height: 5em;
+      text-align: center;
+      background-color: white;
+    }
+    tr:first-child td{
+      border-top: none;
+    }
+    tr:last-child td{
+      border-bottom: none;
+    }
+
+    td:first-child{
+      border-left: none;
+    }
+
+    td:last-child{
+      border-right: none;
+    }
+
+    table{
+      border-collapse: collapse;
+      margin: 2em auto;
+    }
+    form{
+      text-align: center;
+    }
+    #messages{
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+  <form action="" name="controls">
+  <input type="reset" value="Reset" name="reset">
+  </form>
+  <table>
+    <tr>
+      <td id="0"></td>
+      <td id="1"></td>
+      <td id="2"></td>
+    </tr>
+    <tr>
+      <td id="3"></td>
+      <td id="4"></td>
+      <td id="5"></td>
+    </tr>
+    <tr>
+      <td id="6"></td>
+      <td id="7"></td>
+      <td id="8"></td>
+    </tr>
+    <div id="messages"></div>
+  </table>
+  <script>
+    const players = [
+      {name: "Player 1", symbol: "X"},
+      {name: "Player 2", symbol: "O"}
+    ]
+    const dims = 3;
+    const cells = document.getElementsByTagName("td");
+    const boardReset = document.forms["controls"].reset;
+    const messages = document.querySelector("#messages");
+    let board = Array(dims*dims).fill("");
+    let turn = 0;
+    let played = true;
+    let lastCell = NaN;
+    
+    checkRows = (player) =>{
+      let result = 1;
+      for(let row=0;row<dims;row++){
+      result = 1;
+        for(let col=0;col<dims;col++){
+          result *= (board[row+dims*col] == player.symbol ? 1 : 0);
+        }
+        if(result == 1)
+          break;
+      }
+      return result == 1 ? true : false;
+    }
+
+    checkCols = (player) =>{
+      let result = 1;
+      for(let col=0;col<dims;col++){
+        result = 1;
+        for (let row=0;row<dims;row++){
+          result *= (board[col+dims*row] == player.symbol ? 1 : 0);
+        }
+        if (result == 1)
+          break;
+      }
+      
+      return result == 1 ? true : false;
+    }
+
+    checkDiags = (player) =>{
+      let result = 1;
+      for(let col=0;col<dims;col++){
+        result *= (board[col*(1+dims)] == player.symbol ? 1 : 0);
+      }
+      if(result == 1)
+          return true;
+      for(let col=0;col<dims;col++){
+        result *= (board[(col+1)*(dims-1)] == player.symbol ? 1 : 0);
+      }
+      if(result == 1)
+          return true;
+      return false;
+    }
+
+    boardIsFull = () =>{
+      for(let i=0;i<board.length;i++){
+        if(board[i] == "")
+        {
+          return false
+        }
+      }
+      return true;
+    }
+
+    changeTurn = () =>{
+      turn = (turn + 1) % players.length;
+    }
+    listenToTouch = (event)=>{
+      
+      if(event.target.innerText === "")
+      {
+        if(parseInt(event.target.id) !== lastCell && !isNaN(lastCell) && played){
+           changeTurn();
+        }
+        board[parseInt(event.target.id)] =  players[turn].symbol;
+        if(checkCols(players[turn]) || checkRows(players[turn]) || checkDiags(players[turn]))
+          messages.innerText = `${players[turn].name} won!!!`;
+        if(boardIsFull()){
+          messages.innerText = "The game is a tie";
+        }
+        played = true;
+        lastCell = parseInt(event.target.id);
+      }
+      else
+      {
+        board[parseInt(event.target.id)] = "";
+        played = false; 
+      }
+    
+      // Get text from array values
+      event.target.innerText = board[parseInt(event.target.id)];
+    }
+  
+    
+    [...cells].forEach(element => {
+      element.addEventListener("click", listenToTouch);
+    });
+    
+    document.forms["controls"].addEventListener("reset", (event)=>{
+      event.preventDefault;
+      turn = 0;
+      played = true;
+      lastCell = NaN;
+      [...cells].forEach(element =>{
+        element.innerText = "";
+      });
+      board.fill("");
+    },0);
+  </script>
+</body>
+</html>
