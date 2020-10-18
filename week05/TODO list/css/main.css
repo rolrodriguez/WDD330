@@ -1,0 +1,140 @@
+/* 
+ *  Todo List app
+ *  Styling sheet
+ *
+ *  @author: Rolando Rodriguez
+ */
+
+
+:root{
+  --main-color: rgb(108, 173, 199);
+  --main-color-light: rgb(108, 173, 199);
+  --main-app-background: rgb(253, 247, 238);
+  --main-body-background: rgb(247,247,247);
+}
+
+ body{
+   background-color: var(--main-body-background);
+ }
+
+
+ #app{
+   min-width: 400px;
+   max-width: 1000px;
+   margin: auto;
+   padding-bottom: 30px;
+   background-color: var(--main-app-background);
+}
+
+ #maintitle{
+   text-align: center;
+   font-family: 'Courier New', Courier, monospace;
+   background-color: var(--main-color);
+   vertical-align: middle;
+   color: white;
+ }
+
+ #maintitle *{
+   display: inline;
+ }
+
+ #maintitle img{
+   width: 1.5em;
+ }
+
+ #newTaskForm{
+   text-align: center;
+   margin: 20px 0px 0px 0px;
+   height: 42px;
+ }
+
+ #newTaskForm *{
+   margin: 0;
+   display: inline;
+ }
+
+ #newTask{
+   margin: 0px;
+   width: 78%;
+   height: 38px;
+   padding: 0 15px;
+   border: 1px solid gray;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-size: 20px;
+ }
+ #addButton{
+   font-size: 35px;
+   height: 40px;
+   width: 40px;
+   margin: 0 5px;
+   padding: auto auto;
+   background-color: var(--main-color);
+   vertical-align: top;
+   text-align: center;
+   border: 1px solid gray
+ }
+
+ #taskBoard{
+   list-style-type: none;
+   padding: 0;
+   margin: 10px auto 0px auto;
+   width: 80%;
+ }
+
+ #taskBoard .task{
+   border: 1px solid gray;
+   padding: 10px;
+   margin: auto;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   color: rgb(95, 95, 95);
+   /* margin-bottom: 5px; */
+   background-color: white;
+   display: grid;
+   grid-template-columns: auto 88% auto;
+   align-items: center;
+ }
+ /* #taskBoard .task:last-child{
+   margin-bottom: 0px;
+ } */
+
+ #taskBoard .task *{
+   vertical-align: middle;
+   display: inline-block;
+ }
+
+ .task-cb{
+   height: 25px;
+   width: 25px;
+   margin: 0;
+   padding: 0;
+
+ }
+
+ .task-text{
+   font-size: 20px;
+   padding: 0px 10px;
+ }
+ .task-delete{
+   font-size: 35px;
+ }
+
+ #taskFooter{
+   padding: 10px 0px;
+   text-align: center;
+   width: 79.8%;
+   margin: 0px auto;
+   border: 1px solid gray;
+   display: grid;
+   grid-template-columns: 30% 20% 20% 20%;
+   column-gap: 1%;
+   background-color: var(--main-color-light);
+   color: white;
+   font-size: 19px;
+ }
+ #taskFooter *{
+  display: inline-block;
+ }
+
+ .selected{
+   border: 1px solid red;
+ }

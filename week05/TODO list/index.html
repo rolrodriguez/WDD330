@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo List</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <div id="app">
+    <div id="maintitle"><h1>TODOS</h1> <img src="./res/shopping-list.png" /> </div>
+      <ul id="taskBoard">
+        <li class="task">
+          <input type="checkbox" class="task-cb" id="1">
+          <div class="task-text">Create a todo list app</div>
+          <span class="task-delete">X</span>
+        </li>
+        <li class="task">
+          <input type="checkbox" class="task-cb" id="1">
+          <div class="task-text">this is a veeeeeery long tasks that someone needs to finish at any given time so let's see</div>
+          <span class="task-delete">X</span>
+        </li>
+ 
+      </ul>
+      
+   
+        <div id="taskFooter">
+          <div id="taskCounter">0 tasks left</div>
+          <div id="taskAll" class="filter">All</div>
+          <div id="taskActive" class="filter">Active</div>
+          <div id="taskCompleted" class="filter">Completed</div>
+        </div>
+     
+      <div id="newTaskForm">
+        <input type="text" name="newTask" id="newTask" /><input type="button" id="addButton" value="+" />
+      </div>
+  </div>
+  <!-- Icons made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
+  <script src="./js/app.js" type="module"></script>
+</body>
+</html>

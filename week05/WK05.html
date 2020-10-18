@@ -1,0 +1,54 @@
+<html>
+<head>
+  <title>WK05 Exercises - Vue JS</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+ </head>
+ <style>
+   
+  input[type="text"]{
+     width: 300px;
+   }
+  .block{
+    border: 1px solid gray;
+    margin: 1px auto;
+  }
+  .block *{
+    margin: 5px;
+  }
+
+  #result{
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px 200px;
+  }
+
+  .car{
+    border: 1px solid gray;
+    padding: 20px;
+    text-align: center;
+    background-color: #578c96;
+    color: white;
+  }
+
+ </style>
+<body>
+  <h1>More Vue JS</h1>
+  <div id="content">
+    <div id="app" class="block">
+      <h3>List using a component in Vue JS</h3>
+      <ol>
+        <todo-item
+        v-for="item in userList"
+        v-bind:todo="item"
+        v-bind:key="item.id"
+        ></todo-item>
+      </ol>
+    </div>
+  </div>
+  
+  <div id="footer">
+    <a href="./index.html">Return to WK05</a>
+  </div>
+  <script src="./js/WK05.js"></script>
+</body>
+</html>
