@@ -1,0 +1,54 @@
+<html>
+<head>
+  <title>Week 07</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+ </head>
+<body>
+<h1>Week 07</h1>
+<div id="content">
+  <ul>
+    <h3>Exercises</h3>
+      <ul>
+        <li><a href="./myHikes/hiking-start.html">Hikes MVC with comments</a></li>
+      </ul>
+    <h3>Notes</h3>
+      <ul>
+        <li>
+          Immediately Invoked Function Expressions (IIFEs) are a useful way of performing a task 
+          while keeping any variables wrapped up within the scope of the function. This means the 
+          global namespace is not polluted with lots of variable names.
+        </li>
+        <li>
+          A promise represents the future result of an asynchronous operation. Promises don't do 
+          anything that can't already be achieved using callbacks, but they help simplify the process, 
+          and avoid callback hell.
+        </li>
+        <li>
+          Async functions were added to the ES2017 specification. These functions are preceded by the async 
+          keyword and allow you to write asynchronous code as if it was synchronous. This is achieved by 
+          using the await operator before an asynchronous function. This will wrap the return value of the 
+          function in a promise that can then be assigned to a variable. 
+        </li>
+      </ul>
+    <h3>Questions:</h3>
+      <ul>
+        <li>
+          I don't see any references to the old XMLHttpRequest object we used to create
+          to make AJAX. Is it not used anymore? Should be used fetch from now on?
+        </li>
+        <li>
+          I was surprised to see about functions that modify themselves. How frequent are these
+          used?
+        </li>
+        <li>
+          Using async and await seems cleaner than using Promises with then and catch.
+          Are there drawbacks from using one or the other?
+        </li>
+      </ul>
+  </ul>
+</div>
+  <div id="footer">
+    <a href="../index.html">Return to Index</a>
+  </div>  
+</body>
+</html>
