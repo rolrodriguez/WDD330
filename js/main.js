@@ -17,7 +17,8 @@
     {"label": "Week 04 notes", "url": "./week04/" },
     {"label": "Week 05 notes", "url": "./week05/" },
     { "label": "Week 06 todo app", "url": "./week06/" },
-    {"label": "Week 07 notes", "url": "./week07/" }
+    {"label": "Week 07 notes", "url": "./week07/" },
+    {"label": "Week 08 notes", "url": "./week08/" }
   ];
 
   // Get content list
