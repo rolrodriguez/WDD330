@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas Clock</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <style>
+    
+    #content{
+      margin: auto;
+      width: 502px;
+    }
+    #container{
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Canvas Clock</h1>
+  <div id="container">
+  <div id="content">
+    <canvas id="canvas" width="500px" height="500px">
+      Your browser does not support Canvas!!!
+    </canvas>
+  </div>
+</div>
+<script>
+    class CanvasClock{
+      
+      constructor(canvas, x, y, outerRadius, innerRadius, padding){
+        this.x = x;
+        this.y = y;
+        this.outerRadius = outerRadius;
+        this.innerRadius = innerRadius;
+        this.padding = padding
+        this.canvas = canvas;
+        this.offsetX = 5;
+        this.offsetY = 9
+        this.drawBase();
+        this.runLoop();
+      }
+
+      drawBase(){
+         let hourCounter = 12;
+         // Draw first circle
+         drawPal.drawCircle(this.canvas, this.x, this.y, this.outerRadius, "black", "brown"); 
+         drawPal.drawCircle(this.canvas, this.x, this.y, this.innerRadius, "black", "white");
+         
+         // Draw numbers
+         for (let deg = 90; deg<450;deg=deg+30){
+          drawPal.drawText(this.canvas, this.x-this.offsetX+(this.innerRadius-this.padding)*Math.cos(deg*Math.PI/180), this.y+this.offsetY-(this.innerRadius-this.padding)*Math.sin(deg*Math.PI/180), hourCounter.toString());  
+          hourCounter--;
+         }
+      }
+
+      runLoop(){
+        let hourDeg = 270
+         let minDeg = 180
+         let self = this;
+         setInterval(function(){
+          
+          drawPal.clearCanvas(self.canvas);
+          self.drawBase();
+          self.drawHour(hourDeg);
+          self.drawMinute(minDeg);
+          
+          hourDeg+= 0.5;
+          minDeg += 6;
+         }, 100);
+      }
+
+      drawHour(deg){
+        let rads = deg*Math.PI/180
+        let rectX = this.x+8;
+        // let rectY = this.y*1.1-this.innerRadius+this.padding*2;
+        let rectY = this.y;
+        // Draw hour
+         drawPal.drawRect(this.canvas, rectX-2, rectY, 8, this.innerRadius*0.85-this.padding*2, 'black', 'black', rads)
+         drawPal.drawCircle(this.canvas, this.x+this.offsetX, this.y, 10, "black", "black");
+         
+      }
+      drawMinute(deg){
+        let rads = deg*Math.PI/180
+        // Draw min
+        drawPal.drawRect(this.canvas, this.x+6, this.y, 2, this.innerRadius-this.padding*2, 'orange', 'orange', rads);
+         
+      }
+
+    }
+
+    let drawPal = {
+      drawCircle: (canvas, x, y, radius, strokeColor="", fillStyle="transparent") =>{
+        let ctx = canvas.getContext('2d');
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, Math.PI*2, true);
+        ctx.closePath();
+        ctx.strokeStyle = strokeColor;
+        ctx.fillStyle = fillStyle;
+        ctx.lineWidth = 3;
+        ctx.fill();
+        ctx.stroke();
+      }
+      , drawText: (canvas, x, y, text) =>{
+        let ctx = canvas.getContext('2d');
+        ctx.fillStyle = "black";
+        ctx.font = "20px LeagueGothic, Tahoma, Geneva, sans-serif";
+        ctx.fillText(text, x, y);
+      }
+      , drawRect: (canvas, x, y, width, height, strokeColor, fillStyle="transparent", rotation=0) => {
+        let ctx = canvas.getContext('2d');
+        ctx.strokeStyle = strokeColor;
+        ctx.translate(x, y);
+        ctx.rotate(rotation);
+        ctx.fillStyle = fillStyle;
+        ctx.fillRect(-width/2, 0, width, height);
+        ctx.strokeRect(-width/2, 0, width, height);
+        ctx.rotate(-rotation);
+        ctx.translate(-x, -y);
+      }
+      , clearCanvas: (canvas) =>{
+        let ctx = canvas.getContext('2d');
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+      }
+    }
+
+    let clock = new CanvasClock(document.querySelector("#canvas"), 250, 250, 200, 170, 15);
+</script>
+</body>
+</html>

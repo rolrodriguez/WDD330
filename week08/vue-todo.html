@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue simple todo</title>
+  <style>
+    #app{
+  width: 400px;
+  margin: auto;
+  text-align: center;
+}
+
+#app div{
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.todo{
+  background-color: #ddd;
+  margin: 2% auto;
+}
+
+input{
+  width: 70%;
+}
+  </style>
+</head>
+<body>
+  
+  <div id="app">
+    <h1>Vue JS simple Todo list</h1>
+    <todo-list v-bind:todos="todos"></todo-list>
+    <create-todo v-on:save-task="saveTodo"></create-todo>
+  </div>  
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+  Vue.component('Todo', {
+ template: `
+ <div class="todo">{{todo.content}}</div>
+ `,
+  props: ['todo']
+});
+
+Vue.component('TodoList', {
+  template: `
+  <div>
+    <todo v-for="todo in todos" v-bind:key="todo.id" v-bind:todo="todo"></todo>
+  </div>
+  `,
+  props: ['todos'],
+  
+});
+
+Vue.component('CreateTodo', {
+  template: `
+  <div id="create-todo">
+  
+    <input v-model="content" type="text" /><button v-on:click="saveTodo()">Add todo</button>
+  
+  </div>
+  `,
+  data(){
+    return {
+      content: ''
+    }
+  },
+  methods: {
+    saveTodo(){
+      const content = this.content;
+      this.$emit("save-task",
+                 {id: Date.now(), content: content, completed: false});
+      this.content = '';
+    }
+  }
+});
+
+const app = new Vue({
+  el: '#app',
+  data(){
+    return {
+      todos: []
+    }
+  },
+  methods: {
+    saveTodo(todo){
+      swal("The task was created", "", "success");
+      this.todos.push(todo);
+    }
+  }
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<html>
+<head>
+  <title>Week 08</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+ </head>
+<body>
+<h1>Week 08</h1>
+<div id="content">
+  <ul>
+    <h3>Exercises</h3>
+      <ul>
+        <li><a href="./clock.html">Canvas clock</a></li>
+        <li><a href="./vue-todo.html">VueJS simple todo app with components</a></li>
+      </ul>
+    <h3>Notes</h3>
+      <ul>
+        <li>
+          We can use the short notation for transitions, to change from:
+          <ul>
+            <li>transition-property: transform;</li>
+            <li>transition-duration: 0.2s;</li>
+            <li>transition-timing-function: ease-out</li>
+            <li>transition-delay: 50ms</li>
+          </ul>
+          To a more convenient one:
+          <ul>
+            <li>transition: transform 0.2s ease-out 50ms;</li>
+          </ul>
+
+        </li>
+        <li>
+          Several transitions can be declared with the short notation by separating them with commas.
+        </li>
+        <li>
+          There is a short hand notation for animations too, it helps changing from this:
+          <ul>
+            <li>animation-name: appearDisappear;</li>
+            <li>animation-duration: 300ms;</li>
+            <li>animation-timing-function: ease-in;</li>
+            <li>animation-iteration-count: 1;</li>
+            <li>animation-direction: alternate;</li>
+            <li>animation-delay: 5s;</li>
+          </ul>
+          To this:
+          <ul>
+            <li>animation: 300ms ease-in alternate 5s alternate appearDisappear;</li>
+          </ul>
+        </li>
+      </ul>
+    <h3>Questions:</h3>
+      <ul>
+        <li>
+         I see the transforms and animations are part of CSS3, how come we still have to use browser 
+         specific commands in parallel? Is there a plan to standardize this? 
+        </li>
+        <li>
+         Are there any good libraries to use Canvas? Are there any used to develop games?
+        </li>
+        <li>
+          In the industry, is there a good rule of thumb when to use svg or canvas for real world applications?
+          The text mentions one, but just wanted to know if there are good examples out there.
+        </li>
+        <li>
+          We had drag and drop in web apps before CSS3, how was that implemented?
+        </li>
+      </ul>
+  </ul>
+</div>
+  <div id="footer">
+    <a href="../index.html">Return to Index</a>
+  </div>  
+</body>
+</html>
