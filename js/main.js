@@ -20,7 +20,9 @@
     {"label": "Week 07 notes", "url": "./week07/" },
     {"label": "Week 08 notes", "url": "./week08/" },
     {"label": "Week 09 notes", "url": "./week09/" },
-    {"label": "Week 10 notes", "url": "./week10/" }
+    {"label": "Week 10 notes", "url": "./week10/" },
+    { "label": "Week 11 notes", "url": "./week11/" },
+    {"label": "Final Project", "url": "./Final/" }
   ];
 
   // Get content list
